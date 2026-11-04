@@ -1,10 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
-createRoot(document.getElementById('root')!).render(
+const elementoRaiz = document.getElementById("app");
+
+if (!elementoRaiz) {
+  throw new Error("No se encontró el elemento raíz #app en index.html");
+}
+
+createRoot(elementoRaiz).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);

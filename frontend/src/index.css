@@ -1,111 +1,1257 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+ 
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  font-family: "Inter", Arial, sans-serif;
+  color: #172b4d;
+  background: #f7f9fc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+ 
+* {
   box-sizing: border-box;
 }
-
+ 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+ 
+button,
+input {
+  font: inherit;
 }
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+ 
+button {
+  cursor: pointer;
+}
+ 
+.login-pagina {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: white;
+}
+ 
+.login-presentacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 42px clamp(28px, 6vw, 80px) 25px;
+  color: white;
+  background: linear-gradient(145deg, #0d2f70, #1259ba 70%, #2679dc);
+}
+ 
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+ 
+.marca-icono {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border: 1px solid #ffffff55;
+  border-radius: 14px;
+  background: #ffffff18;
+}
+ 
+.marca-azul {
+  color: #8fc8ff;
+}
+ 
+.presentacion-contenido {
+  max-width: 560px;
+  margin: 40px 0;
+}
+ 
+.etiqueta,
+.bienvenida {
+  color: #83c7ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+ 
+.presentacion-contenido h1 {
+  margin: 22px 0 18px;
+  font-size: clamp(36px, 4vw, 57px);
+  line-height: 1.14;
+  letter-spacing: -2px;
+}
+ 
+.presentacion-contenido > p {
+  max-width: 410px;
+  color: #d8e7ff;
+  font-size: 15px;
+  line-height: 1.9;
+}
+ 
+.presentacion-figura {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  margin-top: 25px;
+  overflow: hidden;
+  border: 1px solid #ffffff20;
+  border-radius: 28px;
+  background: #ffffff0c;
+}
+ 
+.figura-circulo {
+  position: absolute;
+  border: 1px solid #ffffff24;
+  border-radius: 50%;
+}
+ 
+.circulo-uno {
+  width: 210px;
+  height: 210px;
+}
+ 
+.circulo-dos {
+  width: 300px;
+  height: 300px;
+}
+ 
+.figura-carro {
+  z-index: 1;
+  color: #d5eaff;
+}
+ 
+.figura-linea {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  height: 1px;
+  background: #ffffff30;
+}
+ 
+.presentacion-pie {
+  color: #c6ddff;
+  font-size: 12px;
+}
+ 
+.login-formulario-contenedor {
+  display: grid;
+  place-items: center;
+  padding: 45px 28px;
+}
+ 
+.login-formulario {
+  width: 100%;
+  max-width: 420px;
+}
+ 
+.login-icono-movil {
+  display: none;
+  color: #1558b0;
+}
+ 
+.login-formulario h2 {
+  margin: 15px 0 8px;
+  color: #142747;
+  font-size: 34px;
+  letter-spacing: -1.2px;
+}
+ 
+.subtitulo {
+  margin: 0 0 30px;
+  color: #77849a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+ 
+.login-formulario form {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.login-formulario label {
+  margin: 18px 0 9px;
+  color: #263954;
+  font-size: 13px;
+  font-weight: 700;
+}
+ 
+.campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 53px;
+  padding: 0 15px;
+  border: 1px solid #dce3ee;
+  border-radius: 11px;
+  color: #8b9bb1;
+  background: white;
+}
+ 
+.campo:focus-within {
+  border-color: #3678d4;
+  box-shadow: 0 0 0 3px #3678d418;
+}
+ 
+.campo input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #172b4d;
+  background: transparent;
+  font-size: 13px;
+}
+ 
+.campo input::placeholder {
+  color: #a4afbf;
+}
+ 
+.boton-ver {
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border: 0;
+  color: #8492a7;
+  background: transparent;
+}
+ 
+.boton-ingresar {
+  min-height: 52px;
+  margin-top: 28px;
+  border: 0;
+  border-radius: 11px;
+  color: white;
+  background: linear-gradient(100deg, #1558b0, #2679dc);
+  box-shadow: 0 8px 20px #1558b026;
+  font-size: 14px;
+  font-weight: 700;
+}
+ 
+.boton-ingresar:hover {
+  filter: brightness(1.05);
+}
+ 
+.boton-ingresar:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+ 
+.mensaje-error {
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  color: #b42318;
+  background: #fef2f2;
+  font-size: 13px;
+  line-height: 1.5;
+}
+ 
+.login-seguridad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  color: #8995a7;
+  font-size: 11px;
+}
+ 
+@media (max-width: 760px) {
+  .login-pagina {
+    grid-template-columns: 1fr;
+  }
+ 
+  .login-presentacion {
+    padding: 24px;
+  }
+ 
+  .presentacion-contenido {
+    margin: 30px 0 10px;
+  }
+ 
+  .presentacion-contenido h1 {
+    font-size: 34px;
+  }
+ 
+  .presentacion-figura,
+  .presentacion-pie {
+    display: none;
+  }
+ 
+  .login-formulario-contenedor {
+    padding: 38px 24px;
+  }
+ 
+  .login-formulario h2 {
+    font-size: 29px;
   }
 }
-h2 {
+ 
+ 
+/* =========================================
+   DASHBOARD PROFESIONAL PARKCONTROL
+   ========================================= */
+ 
+.pc-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fb;
+  color: #17233b;
+}
+ 
+.pc-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #102e62;
+  color: #e8efff;
+  display: flex;
+  flex-direction: column;
+  padding: 27px 17px 18px;
+}
+ 
+.pc-marca {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 7px 35px;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+ 
+.pc-marca > span:last-of-type > span {
+  color: #8bbcff;
+}
+ 
+.pc-marca-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: #214985;
+  color: #bcd8ff;
+}
+ 
+.pc-menu-titulo {
+  margin: 0 10px 13px;
+  color: #94add5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+ 
+.pc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+ 
+.pc-nav-enlace {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 13px;
+  border-radius: 10px;
+  color: #c9d7ef;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+ 
+.pc-nav-enlace:hover {
+  background: #1b4079;
+  color: white;
+}
+ 
+.pc-nav-activo {
+  background: #2468cc;
+  color: white;
+  box-shadow: 0 5px 14px #081f4c55;
+}
+ 
+.pc-indicador-activo {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a9d0ff;
+  margin-left: auto;
+}
+ 
+.pc-sidebar-pie {
+  margin-top: auto;
+}
+ 
+.pc-seguridad {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 15px 10px;
+  margin-bottom: 12px;
+  border-top: 1px solid #315184;
+  color: #9cc5ff;
+}
+ 
+.pc-seguridad div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+.pc-seguridad strong {
+  font-size: 12px;
+  color: white;
+}
+ 
+.pc-seguridad span {
+  font-size: 11px;
+  color: #a8bddc;
+}
+ 
+.pc-boton-salir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  color: #f2c6c6;
+  background: #18396e;
+  border: 1px solid #345485;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+ 
+.pc-boton-salir:hover {
+  background: #274a7d;
+}
+ 
+.pc-contenido {
+  min-width: 0;
+  flex: 1;
+  padding: 31px 36px 18px;
+}
+ 
+.pc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 27px;
+}
+ 
+.pc-header-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+.pc-migas {
+  color: #7d8da8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+ 
+.pc-header h1 {
+  margin: 8px 0 5px;
+  color: #142647;
+  font-size: 29px;
+  letter-spacing: -1px;
+}
+ 
+.pc-header p {
+  margin: 0;
+  color: #75839b;
+  font-size: 13px;
+}
+ 
+.pc-actualizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  color: #245cb1;
+  background: white;
+  border: 1px solid #dbe4f1;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+ 
+.pc-actualizar:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+ 
+.pc-girando {
+  animation: pc-giro 1s linear infinite;
+}
+ 
+@keyframes pc-giro {
+  to {
+    transform: rotate(360deg);
+  }
+}
+ 
+.pc-bienvenida {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: hidden;
+  padding: 28px 31px;
+  margin-bottom: 30px;
+  border-radius: 17px;
+  background: linear-gradient(115deg, #1552a5, #2678dd);
+  color: white;
+  box-shadow: 0 10px 28px #1e5cb51a;
+}
+ 
+.pc-etiqueta {
+  color: #c7e1ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+ 
+.pc-bienvenida h2 {
+  margin: 11px 0 8px;
   font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+  letter-spacing: -0.6px;
+}
+ 
+.pc-bienvenida p {
+  max-width: 560px;
+  margin: 0;
+  color: #e0edff;
+  font-size: 13px;
+  line-height: 1.7;
+}
+ 
+.pc-ilustracion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 95px;
+  height: 95px;
+  color: #d8e9ff;
+  background: #ffffff14;
+  border: 1px solid #ffffff30;
+  border-radius: 24px;
+}
+ 
+.pc-seccion {
+  margin-bottom: 26px;
+}
+ 
+.pc-seccion-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+ 
+.pc-seccion-encabezado h2 {
+  margin: 0 0 6px;
+  color: #1a2a47;
+  font-size: 17px;
+}
+ 
+.pc-seccion-encabezado p {
+  margin: 0;
+  color: #7a879c;
+  font-size: 12px;
+}
+ 
+.pc-estado {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #60738d;
+  font-size: 11px;
+  white-space: nowrap;
+}
+ 
+.pc-estado > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a36a;
+}
+ 
+.pc-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+ 
+.pc-tarjeta {
+  min-width: 0;
+  padding: 21px 19px;
+  background: white;
+  border: 1px solid #e6ebf3;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px #1b355508;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.pc-tarjeta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px #1b355510;
+}
+ 
+.pc-tarjeta-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+ 
+.pc-tarjeta-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+}
+ 
+.pc-tarjeta-punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #dce5f1;
+}
+ 
+.pc-tarjeta-titulo {
+  min-height: 33px;
+  margin: 0 0 7px;
+  color: #6b7a92;
+  font-size: 12px;
+  line-height: 1.5;
+}
+ 
+.pc-tarjeta-valor {
+  overflow-wrap: anywhere;
+  color: #162744;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+ 
+.pc-tarjeta-detalle {
+  margin: 9px 0 0;
+  color: #8a97aa;
+  font-size: 10px;
+  line-height: 1.5;
+}
+ 
+.pc-informacion {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 21px;
+  background: white;
+  border: 1px solid #e4eaf3;
+  border-radius: 13px;
+}
+ 
+.pc-informacion-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  color: #2563b9;
+  background: #eff6ff;
+  border-radius: 12px;
+}
+ 
+.pc-informacion h3 {
+  margin: 2px 0 7px;
+  color: #243754;
+  font-size: 13px;
+}
+ 
+.pc-informacion p {
+  margin: 0;
+  color: #7c8aa0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+ 
+.pc-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  color: #a32929;
+  background: #fff1f1;
+  border: 1px solid #ffd3d3;
+  border-radius: 10px;
+  font-size: 12px;
+}
+ 
+.pc-error button {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  color: #a32929;
+  background: white;
+  border: 1px solid #f1c2c2;
+  border-radius: 7px;
+  cursor: pointer;
+}
+ 
+.pc-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 22px;
+  margin-top: 28px;
+  color: #8b97aa;
+  border-top: 1px solid #e2e8f0;
+  font-size: 10px;
+}
+ 
+.pc-menu-movil,
+.pc-cerrar-menu,
+.pc-fondo-movil {
+  display: none;
+}
+ 
+@media (max-width: 1200px) {
+  .pc-tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+ 
+  .pc-contenido {
+    padding: 26px 24px 18px;
   }
 }
-p {
+ 
+@media (max-width: 760px) {
+  .pc-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1001;
+    width: 270px;
+    min-width: 270px;
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+  }
+ 
+  .pc-sidebar-abierto {
+    transform: translateX(0);
+  }
+ 
+  .pc-fondo-movil {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #0c1c34a6;
+    border: none;
+  }
+ 
+  .pc-cerrar-menu,
+  .pc-menu-movil {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+ 
+  .pc-cerrar-menu {
+    margin-left: auto;
+  }
+ 
+  .pc-menu-movil {
+    color: #24456e;
+  }
+ 
+  .pc-contenido {
+    width: 100%;
+    padding: 22px 16px 16px;
+  }
+ 
+  .pc-header {
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+ 
+  .pc-header h1 {
+    font-size: 25px;
+  }
+ 
+  .pc-actualizar {
+    padding: 10px;
+    font-size: 0;
+  }
+ 
+  .pc-actualizar svg {
+    width: 19px;
+    height: 19px;
+  }
+ 
+  .pc-bienvenida {
+    padding: 23px 20px;
+    border-radius: 14px;
+  }
+ 
+  .pc-bienvenida h2 {
+    font-size: 21px;
+  }
+ 
+  .pc-ilustracion {
+    display: none;
+  }
+ 
+  .pc-seccion-encabezado {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+ 
+  .pc-tarjetas {
+    gap: 11px;
+  }
+ 
+  .pc-tarjeta {
+    padding: 16px 13px;
+  }
+ 
+  .pc-tarjeta-valor {
+    font-size: 23px;
+  }
+ 
+  .pc-tarjeta-titulo {
+    min-height: 36px;
+    font-size: 11px;
+  }
+ 
+  .pc-footer {
+    flex-direction: column;
+    gap: 7px;
+  }
+}
+ 
+@media (max-width: 380px) {
+  .pc-tarjetas {
+    grid-template-columns: 1fr;
+  }
+}
+ 
+ 
+/* =====================================================
+   MODULO VEHICULOS - INTERFAZ PROFESIONAL
+   Estos estilos se agregan sin modificar login/dashboard.
+   ===================================================== */
+ 
+.pc-modulo {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: #172b4d;
+}
+ 
+.pc-vehiculos-encabezado {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+ 
+.pc-encabezado-texto { min-width: 0; }
+.pc-vehiculos .pc-migas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 13px;
+  color: #7d8da8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+.pc-migas-separador { color: #b5c0d0; }
+.pc-vehiculos-encabezado h1 {
+  margin: 0 0 9px;
+  color: #142647;
+  font-size: clamp(27px, 3vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+.pc-vehiculos-encabezado p {
+  margin: 0;
+  color: #77859b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+ 
+.pc-accion-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  padding: 0 17px;
+  border: 1px solid #1e63c5;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #246bd0, #1558b0);
+  box-shadow: 0 5px 13px #1558b020;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.pc-accion-principal:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px #1558b02b;
+  filter: brightness(1.04);
+}
+.pc-accion-principal:disabled { opacity: .65; cursor: wait; transform: none; }
+ 
+.pc-aviso {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  margin: 0 0 18px;
+  border: 1px solid;
+  border-radius: 11px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.pc-aviso > span { flex: 1; }
+.pc-aviso > button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+}
+.pc-aviso > button:hover { background: #00000008; }
+.pc-aviso-error { color: #a32929; background: #fff3f2; border-color: #ffd6d2; }
+.pc-aviso-exito { color: #147449; background: #effaf4; border-color: #c9eed8; }
+ 
+.pc-vehiculos-resumen {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+.pc-indicador-vehiculo {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 15px #1b355507;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pc-indicador-vehiculo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px #1b35550d;
+}
+.pc-indicador-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.pc-indicador-etiqueta { color: #718098; font-size: 12px; font-weight: 600; }
+.pc-indicador-icono {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  color: #2468c7;
+  background: #edf4ff;
+}
+.pc-indicador-activos .pc-indicador-icono { color: #168357; background: #eaf8f0; }
+.pc-indicador-inactivos .pc-indicador-icono { color: #c17b24; background: #fff5e7; }
+.pc-indicador-tipos .pc-indicador-icono { color: #7655bd; background: #f3efff; }
+.pc-indicador-inferior { display: flex; flex-direction: column; gap: 6px; }
+.pc-indicador-inferior strong { color: #172b4d; font-size: 31px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
+.pc-indicador-descripcion { color: #95a0b1; font-size: 11px; }
+ 
+.pc-vehiculos-listado {
+  overflow: hidden;
+  border: 1px solid #e4eaf2;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 5px 18px #1b355507;
+}
+.pc-vehiculos-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 23px 20px;
   margin: 0;
 }
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.pc-tabla-titulo { display: flex; align-items: center; gap: 13px; min-width: 0; }
+.pc-tabla-titulo-icono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: #2365bf;
+  background: #eef5ff;
+  border-radius: 12px;
 }
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.pc-tabla-titulo h2 { margin: 0 0 6px; color: #1a2a47; font-size: 16px; font-weight: 800; }
+.pc-tabla-titulo p { margin: 0; color: #8490a3; font-size: 11px; line-height: 1.5; }
+.pc-vehiculos-controles { display: flex; align-items: center; justify-content: flex-end; gap: 9px; min-width: 0; }
+.pc-busqueda-vehiculos {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: min(290px, 28vw);
+  min-width: 180px;
+  min-height: 41px;
+  padding: 0 11px;
+  border: 1px solid #dfe6f0;
+  border-radius: 9px;
+  color: #8290a5;
+  background: #fff;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.pc-busqueda-vehiculos:focus-within { border-color: #6b9ee5; box-shadow: 0 0 0 3px #3678d414; }
+.pc-busqueda-vehiculos input { width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; color: #243754; background: transparent; font-size: 11px; }
+.pc-busqueda-vehiculos input::placeholder { color: #a0aabb; }
+.pc-limpiar-busqueda { display: grid; place-items: center; flex-shrink: 0; padding: 3px; border: 0; border-radius: 5px; color: #8290a5; background: transparent; }
+.pc-limpiar-busqueda:hover { color: #244f89; background: #f0f4fa; }
+.pc-filtro-estado {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 41px;
+  padding: 0 10px;
+  border: 1px solid #dfe6f0;
+  border-radius: 9px;
+  color: #73829a;
+  background: white;
+}
+.pc-filtro-estado select { max-width: 145px; border: 0; outline: 0; color: #455773; background: transparent; font: inherit; font-size: 11px; cursor: pointer; }
+.pc-boton-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid #dce4ef;
+  border-radius: 9px;
+  color: #38577f;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background .18s ease, border-color .18s ease;
+}
+.pc-boton-secundario:hover { border-color: #b9cce5; background: #f7faff; }
+.pc-boton-secundario:disabled { opacity: .6; cursor: wait; }
+.pc-boton-actualizar { width: 41px; padding: 0; }
+.pc-icono-girando { animation: pc-giro 1s linear infinite; }
+ 
+.pc-listado-contexto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 11px 23px;
+  border-top: 1px solid #f0f3f8;
+  border-bottom: 1px solid #e9eef5;
+  background: #fafbfd;
+  color: #718098;
+  font-size: 10px;
+}
+.pc-listado-contexto > span { display: inline-flex; align-items: center; gap: 8px; }
+.pc-punto-contexto { width: 7px; height: 7px; border-radius: 50%; background: #28a36a; }
+.pc-listado-contexto-secundario { color: #929daf; }
+.pc-tabla-scroll { width: 100%; overflow-x: auto; }
+.pc-tabla-vehiculos { width: 100%; min-width: 800px; border-collapse: collapse; text-align: left; }
+.pc-tabla-vehiculos thead { background: #f8fafd; }
+.pc-tabla-vehiculos th {
+  padding: 14px 17px;
+  border-bottom: 1px solid #e8edf4;
+  color: #8290a5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .35px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.pc-tabla-vehiculos td { padding: 15px 17px; border-bottom: 1px solid #eff2f7; color: #53637b; font-size: 11px; vertical-align: middle; }
+.pc-tabla-vehiculos tbody tr { transition: background .15s ease; }
+.pc-tabla-vehiculos tbody tr:hover { background: #f9fbff; }
+.pc-tabla-vehiculos tbody tr:last-child td { border-bottom: 0; }
+.pc-columna-acciones { text-align: center; }
+.pc-vehiculo-identidad { display: flex; align-items: center; gap: 11px; min-width: 135px; }
+.pc-vehiculo-icono { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; color: #2468c7; background: #edf4ff; }
+.pc-icono-tipo-bicicleta { color: #168357; background: #eaf8f0; }
+.pc-icono-tipo-patineta { color: #7655bd; background: #f3efff; }
+.pc-vehiculo-datos, .pc-marca-modelo { display: flex; flex-direction: column; gap: 5px; }
+.pc-vehiculo-datos strong, .pc-marca-modelo strong { color: #253754; font-size: 11px; font-weight: 700; }
+.pc-vehiculo-datos small, .pc-marca-modelo small { color: #96a1b1; font-size: 10px; }
+.pc-placa-vehiculo { display: inline-flex; align-items: center; padding: 5px 8px; border: 1px solid #e0e6ef; border-radius: 5px; color: #40516b; background: #f8fafd; font-size: 10px; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }
+.pc-tipo-etiqueta { display: inline-flex; align-items: center; padding: 6px 9px; border-radius: 7px; color: #42669a; background: #eef4fc; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.pc-cliente-identificador { color: #50617b; font-size: 11px; font-weight: 700; }
+.pc-estado-etiqueta { display: inline-flex; align-items: center; gap: 7px; padding: 6px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.pc-estado-etiqueta.activo { color: #18784c; background: #eaf8f0; }
+.pc-estado-etiqueta.inactivo { color: #9a5b24; background: #fff3e4; }
+.pc-estado-punto { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pc-acciones-registro { display: flex; align-items: center; justify-content: center; gap: 7px; }
+.pc-accion-tabla { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 1px solid #f1d6d4; border-radius: 8px; color: #bd4b45; background: #fff8f7; transition: background .18s ease, border-color .18s ease; }
+.pc-accion-tabla:hover { border-color: #eab7b3; background: #ffefed; }
+.pc-registro-sin-acciones { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; color: #a0aabb; background: #f3f5f8; }
+.pc-indicador-detalle { display: grid; place-items: center; width: 28px; height: 28px; color: #9aa6b7; }
+.pc-tabla-pie { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 23px; border-top: 1px solid #e9eef5; color: #8793a6; font-size: 10px; }
+.pc-tabla-pie strong { color: #40516b; }
+.pc-vehiculos-pie > span:last-child { display: inline-flex; align-items: center; gap: 6px; color: #6d8b7c; }
+ 
+.pc-tabla-vacia { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 245px; padding: 35px 22px; text-align: center; }
+.pc-estado-cargando { color: #2865b5; }
+.pc-estado-vacio { color: #75839a; }
+.pc-vacio-icono { display: grid; place-items: center; width: 67px; height: 67px; margin-bottom: 3px; border: 1px solid #e3ecf9; border-radius: 20px; color: #4778b9; background: #f1f6ff; }
+.pc-tabla-vacia strong { color: #293b57; font-size: 14px; }
+.pc-tabla-vacia > span { max-width: 390px; color: #8793a6; font-size: 11px; line-height: 1.7; }
+.pc-tabla-vacia .pc-accion-principal, .pc-tabla-vacia .pc-boton-secundario { margin-top: 5px; }
+ 
+.pc-modal-vehiculos-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px;
+  background: #0c1c34a8;
+  backdrop-filter: blur(4px);
+}
+.pc-modal-vehiculos {
+  width: min(100%, 690px);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border: 1px solid #e2e8f1;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 24px 80px #071a3a40;
+  animation: pc-modal-entrada .2s ease-out;
+}
+@keyframes pc-modal-entrada { from { opacity: 0; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.pc-modal-vehiculos-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 24px 27px; border-bottom: 1px solid #e9eef5; }
+.pc-modal-titulo-grupo { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.pc-modal-icono { display: grid; place-items: center; flex-shrink: 0; width: 49px; height: 49px; border-radius: 14px; color: #2468c7; background: #edf4ff; }
+.pc-modal-vehiculos-header .pc-migas { margin-bottom: 7px; font-size: 9px; }
+.pc-modal-vehiculos-header h2 { margin: 0 0 6px; color: #1c2e4a; font-size: 20px; letter-spacing: -.5px; }
+.pc-modal-vehiculos-header p { margin: 0; color: #8793a6; font-size: 11px; line-height: 1.5; }
+.pc-boton-cerrar-modal { display: grid; place-items: center; flex-shrink: 0; width: 35px; height: 35px; padding: 0; border: 1px solid #e3e8f0; border-radius: 9px; color: #748198; background: white; }
+.pc-boton-cerrar-modal:hover { color: #243754; background: #f5f7fb; }
+.pc-boton-cerrar-modal:disabled { opacity: .55; cursor: wait; }
+.pc-formulario-contenido { padding: 24px 27px 26px; }
+.pc-formulario-seccion-titulo { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.pc-formulario-seccion-titulo > span { display: grid; place-items: center; flex-shrink: 0; width: 29px; height: 29px; border-radius: 8px; color: #2865b5; background: #edf4ff; font-size: 10px; font-weight: 800; }
+.pc-formulario-seccion-titulo strong { display: block; margin: 1px 0 5px; color: #2a3c58; font-size: 12px; }
+.pc-formulario-seccion-titulo p { margin: 0; color: #8995a7; font-size: 10px; }
+.pc-formulario-seccion-secundaria { margin-top: 25px; }
+.pc-formulario-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 16px; }
+.pc-formulario-grid label { display: flex; flex-direction: column; gap: 8px; min-width: 0; color: #344761; font-size: 11px; font-weight: 700; }
+.pc-formulario-grid label > span { display: inline; color: #d84d4d; }
+.pc-formulario-grid input, .pc-formulario-grid select { width: 100%; min-width: 0; min-height: 42px; padding: 0 12px; border: 1px solid #dce4ef; border-radius: 9px; outline: none; color: #293b57; background: #fff; font: inherit; font-size: 11px; font-weight: 400; transition: border-color .18s ease, box-shadow .18s ease; }
+.pc-formulario-grid input::placeholder { color: #a3adbc; }
+.pc-formulario-grid input:focus, .pc-formulario-grid select:focus { border-color: #6b9ee5; box-shadow: 0 0 0 3px #3678d414; }
+.pc-campo-completo { grid-column: 1 / -1; }
+.pc-ayuda-vehiculos { display: flex; align-items: flex-start; gap: 10px; padding: 13px 14px; margin-top: 22px; border: 1px solid #dceafe; border-radius: 10px; color: #3670b8; background: #f3f8ff; }
+.pc-ayuda-vehiculos svg { flex-shrink: 0; margin-top: 1px; }
+.pc-ayuda-vehiculos p { margin: 0; color: #627a9a; font-size: 10px; line-height: 1.7; }
+.pc-modal-vehiculos-acciones { display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 17px 27px; border-top: 1px solid #e9eef5; background: #fbfcfe; }
+.pc-modal-vehiculos-acciones .pc-accion-principal { min-width: 155px; }
+ 
+@media (max-width: 1200px) {
+  .pc-vehiculos-resumen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pc-vehiculos-toolbar { align-items: flex-start; flex-direction: column; }
+  .pc-vehiculos-controles { width: 100%; justify-content: flex-start; }
+  .pc-busqueda-vehiculos { flex: 1; width: auto; }
+}
+ 
+@media (max-width: 760px) {
+  .pc-vehiculos-encabezado { align-items: flex-start; flex-direction: column; gap: 17px; margin-bottom: 22px; }
+  .pc-vehiculos-encabezado h1 { font-size: 26px; }
+  .pc-boton-registrar { width: 100%; }
+  .pc-vehiculos-resumen { gap: 11px; margin-bottom: 18px; }
+  .pc-indicador-vehiculo { padding: 15px; border-radius: 12px; }
+  .pc-indicador-superior { align-items: flex-start; gap: 7px; margin-bottom: 13px; }
+  .pc-indicador-etiqueta { font-size: 11px; line-height: 1.5; }
+  .pc-indicador-icono { width: 35px; height: 35px; border-radius: 10px; }
+  .pc-indicador-icono svg { width: 19px; height: 19px; }
+  .pc-indicador-inferior strong { font-size: 27px; }
+  .pc-indicador-descripcion { font-size: 10px; line-height: 1.5; }
+  .pc-vehiculos-listado { border-radius: 12px; }
+  .pc-vehiculos-toolbar { padding: 18px 15px; gap: 17px; }
+  .pc-tabla-titulo-icono { width: 39px; height: 39px; }
+  .pc-tabla-titulo h2 { font-size: 14px; }
+  .pc-vehiculos-controles { flex-wrap: wrap; gap: 8px; }
+  .pc-busqueda-vehiculos { flex-basis: 100%; min-width: 0; }
+  .pc-filtro-estado { flex: 1; }
+  .pc-filtro-estado select { max-width: none; width: 100%; }
+  .pc-listado-contexto { align-items: flex-start; flex-direction: column; gap: 8px; padding: 11px 15px; }
+  .pc-tabla-pie { align-items: flex-start; flex-direction: column; padding: 14px 15px; }
+  .pc-modal-vehiculos-fondo { align-items: flex-start; padding: 12px; }
+  .pc-modal-vehiculos { max-height: calc(100vh - 24px); border-radius: 13px; }
+  .pc-modal-vehiculos-header { padding: 19px 17px; }
+  .pc-modal-icono { width: 41px; height: 41px; }
+  .pc-modal-vehiculos-header h2 { font-size: 17px; }
+  .pc-formulario-contenido { padding: 20px 17px; }
+  .pc-formulario-grid { gap: 15px 12px; }
+  .pc-modal-vehiculos-acciones { padding: 14px 17px; }
+}
+ 
+@media (max-width: 480px) {
+  .pc-vehiculos-resumen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pc-indicador-vehiculo { padding: 13px 11px; }
+  .pc-indicador-superior { flex-direction: column-reverse; }
+  .pc-formulario-grid { grid-template-columns: 1fr; }
+  .pc-campo-completo { grid-column: auto; }
+  .pc-modal-vehiculos-acciones { flex-direction: column-reverse; }
+  .pc-modal-vehiculos-acciones button { width: 100%; }
+  .pc-modal-vehiculos-header .pc-migas { letter-spacing: .7px; }
 }
