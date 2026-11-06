@@ -1,0 +1,8 @@
+hacer las vistas de park control
+movimientos
+pagos
+tarifas
+usuarios
+vehiculos
+
+y que se cree automaticamente el usuario del administrador en la base de datos como en el proyecto de java para poder ingresar desde hay

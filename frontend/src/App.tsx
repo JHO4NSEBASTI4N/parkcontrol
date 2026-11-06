@@ -26,7 +26,7 @@ import {
   ParkingCircle,
 } from "lucide-react";
  
-import Login from "./pages/login";
+import Login from "./pages/Login";
 // import Vehiculos from "./pages/Vehiculos";
 import Clientes from "./pages/Clientes";
 // import Movimientos from "./pages/Movimientos";
@@ -405,20 +405,18 @@ export default function App() {
               path="/dashboard"
               element={<PaginaDashboard />}
             />
- 
-            {/*  
+              
             <Route
               path="/vehiculos"
               element={<Vehiculos />}
             />
  
-            {/* MÓDULO CLIENTES INTEGRADO */}
+            
             <Route
               path="/clientes"
               element={<Clientes />}
             />
- 
- {/*
+
             <Route
               path="/movimientos"
               element={<Movimientos />}
@@ -437,7 +435,7 @@ export default function App() {
             <Route
               path="/usuarios"
               element={<Usuarios />}
-            /> */}
+            /> 
           </Route>
         </Route>
  
